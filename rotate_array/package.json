@@ -1,0 +1,14 @@
+{
+  "name": "rotate_array",
+  "version": "1.0.0",
+  "description": "https://www.hackerrank.com/challenges/ctci-array-left-rotation/",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "author": "R5D4",
+  "license": "ISC"
+}
