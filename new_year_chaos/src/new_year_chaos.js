@@ -7,15 +7,17 @@ function minimumBribes(q) {
     let bribes = 0;
     // quit before the last position
     for (let i = 0; i < q.length - 1; i++) {
-        const current = q[i];
-        const position = i + 1;
-        const right = q[i + 1];
-        if (current > position + 2) {return 'Too chaotic';}
+        const initPos = q[i];
+        const currentPos = i + 1;
+        const nextInitPos = q[i + 1];
+
+        // no one can move up more than two positions, invalid configuration
+        if (initPos > currentPos + 2) {return 'Too chaotic';}
 
         // Calculate number of bribes
-        if (current > position) {
-            bribes += (current - position);
-        } else if (current > right) {
+        if (initPos > currentPos) {
+            bribes += (initPos - currentPos);
+        } else if (initPos > nextInitPos) {
             bribes++;
         }
     }
