@@ -1,0 +1,23 @@
+{
+  "name": "hacker-rank",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/R5D4/hacker-rank.git"
+  },
+  "author": "R5D4",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/R5D4/hacker-rank/issues"
+  },
+  "homepage": "https://github.com/R5D4/hacker-rank#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
