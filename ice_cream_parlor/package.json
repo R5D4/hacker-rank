@@ -1,0 +1,11 @@
+{
+  "name": "ice_cream_parlor",
+  "version": "1.0.0",
+  "description": "https://www.hackerrank.com/challenges/ctci-ice-cream-parlor/problem",
+  "main": "index.js",
+  "scripts": {
+    "test": "../node_modules/mocha/bin/mocha --reporter min --watch"
+  },
+  "author": "R5D4",
+  "license": "ISC"
+}
