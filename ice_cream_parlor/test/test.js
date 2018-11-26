@@ -3,7 +3,7 @@ const whatFlavors = require('../src/whatFlavors');
 
 describe('whatFlavors', () => {
     const params = [
-        {cost: [1, 4, 5, 3, 2], money: 5, expected: '1 4'},
+        {cost: [1, 4, 5, 3, 2], money: 4, expected: '1 4'},
         {cost: [2, 2, 4, 3], money: 4, expected: '1 2'},
     ];
     params.forEach(param => {
