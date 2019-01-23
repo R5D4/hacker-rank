@@ -1,0 +1,15 @@
+{
+  "name": "sock_merchant",
+  "version": "1.0.0",
+  "description": "https://www.hackerrank.com/challenges/sock-merchant/",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "../node_modules/mocha/bin/mocha --reporter min --watch"
+  },
+  "author": "R5D4",
+  "license": "ISC",
+  "dependencies": {}
+}
