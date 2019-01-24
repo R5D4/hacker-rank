@@ -1,13 +1,10 @@
 function getMoneySpent(keyboards, drives, b) {
-    const spent = [];
+    let best = -1;
     keyboards.forEach(kb => {
         drives.forEach(dr => {
-            spent.push(kb + dr);
+            const s = kb + dr;
+            if (s <= b && s > best) best = s;
         });
-    });
-    let best = -1;
-    spent.forEach(s => {
-        if (s <= b && s > best) best = s;
     });
     return best;
 }
