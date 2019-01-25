@@ -10,6 +10,14 @@ describe('getMoneySpent', () => {
         expect(spent).to.equal(9);
     });
 
+    it('should return 8 for spending 8 dollars out of 9', () => {
+        const kb = [5, 1, 10];
+        const dr = [4, 2, 7];
+        const b = 8;
+        const spent = getMoneySpent(kb, dr, b);
+        expect(spent).to.equal(8);
+    });
+
     it('should return -1 for not able to buy both', () => {
         const kb = [4];
         const dr = [5];
