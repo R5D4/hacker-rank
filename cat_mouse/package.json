@@ -1,0 +1,14 @@
+{
+  "name": "cat_mouse",
+  "version": "1.0.0",
+  "description": "https://www.hackerrank.com/challenges/cats-and-a-mouse/problem",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "../node_modules/mocha/bin/mocha --reporter min --watch"
+  },
+  "author": "R5D4",
+  "license": "ISC"
+}
