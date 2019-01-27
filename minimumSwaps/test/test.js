@@ -7,4 +7,22 @@ describe('minimumSwaps', () => {
         const swaps = minimumSwaps(arr);
         expect(swaps).to.equal(5);
     });
+
+    it('should output 3 for 3 swaps', () => {
+        const arr = [4, 3, 1, 2];
+        const swaps = minimumSwaps(arr);
+        expect(swaps).to.equal(3);
+    });
+
+    it('should output 3 for 3 swaps #2', () => {
+        const arr = [2, 3, 4, 1, 5];
+        const swaps = minimumSwaps(arr);
+        expect(swaps).to.equal(3);
+    });
+
+    it('should output 3 for 3 swaps #3', () => {
+        const arr = [1, 3, 5, 2, 4, 6, 7];
+        const swaps = minimumSwaps(arr);
+        expect(swaps).to.equal(3);
+    });
 });
