@@ -12,13 +12,10 @@ function minimumSwaps (arr) {
     arr.forEach((n, i) => {
         distance[i] = getDistance(n, i);
     });
-    console.log('\n');
 
     let swaps = 0;
     let sorted = false;
     while (!sorted) {
-        console.log(`${swaps}: ${arr}`);
-        console.log(`${swaps}: ${distance}`);
         sorted = true;
         for (let i = 0; i < arr.length; i++) {
             const n = arr[i];
