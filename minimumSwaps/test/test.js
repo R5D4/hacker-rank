@@ -2,7 +2,7 @@ const expect = require('chai').expect;
 const { minimumSwaps } = require('../src/minimumSwaps');
 
 describe('minimumSwaps', () => {
-    it.only('should output 2 for 2 swaps', () => {
+    it('should output 2 for 2 swaps', () => {
         const arr = [4, 3, 2, 1];
         const swaps = minimumSwaps(arr);
         expect(swaps).to.equal(2);

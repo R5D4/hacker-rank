@@ -8,26 +8,25 @@ function minimumSwaps (arr) {
     // find connected components
     const components = [];
     while (Object.entries(graph).length !== 0) {
-        console.log(graph)
         let node = Object.keys(graph)[0];
         const component = [node];
-        const next = graph[node];
-        delete graph[node];
         components.push(component);
-        console.log(`node: ${node}, graph[node]: ${graph[node]}`);
-
+        let next = graph[node];
+        delete graph[node];
         node = next;
-        while (graph[node]) {
-            console.log(`node: ${node}, graph[node]: ${graph[node]}`);
-            node = graph[node];
+        
+        while (graph[node] !== undefined) {
             component.push(node);
+            next = graph[node];
             delete graph[node];
-            node = graph[node];
+            node = next;
         }
     }
-    console.log(components);
 
-    let swaps = 0;
+    // calculate number of swaps based on connected components
+    const swaps = components.reduce((acc, component) => {
+        return acc + component.length - 1;
+    }, 0);
     
     return swaps;
 }
