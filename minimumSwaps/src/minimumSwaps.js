@@ -1,4 +1,6 @@
 function minimumSwaps (arr) {
+    let swaps = 0;
+
     // create graph from array
     const graph = {};
     arr.forEach((v, i) => {
@@ -21,12 +23,11 @@ function minimumSwaps (arr) {
             delete graph[node];
             node = next;
         }
-    }
 
-    // calculate number of swaps based on connected components
-    const swaps = components.reduce((acc, component) => {
-        return acc + component.length - 1;
-    }, 0);
+        // found all nodes in a connected component
+        // calculate # of swaps needed to sort this component
+        swaps += component.length - 1;
+    }
     
     return swaps;
 }
