@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "../node_modules/mocha/bin/mocha --reporter min --watch"
+    "test": "../node_modules/mocha/bin/mocha --reporter min --watch",
+    "debug": "../node_modules/mocha/bin/mocha --inspect-brk"
   },
   "author": "R5D4",
   "license": "ISC"
