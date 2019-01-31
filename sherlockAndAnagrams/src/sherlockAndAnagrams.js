@@ -26,7 +26,7 @@ function sherlockAndAnagrams (s) {
     for (let start = 0; start < s.length - 1; start++) {
         for (let len = 1; len < s.length - start; len++) {
             const s1 = s.substring(start, start + len);
-            for (let s2Start = start + 1; s2Start <= s.length - start - len + 1; s2Start++) {
+            for (let s2Start = start + 1; s2Start < s.length - len + 1; s2Start++) {
                 const s2 = s.substring(s2Start, s2Start + len);
                 if (isAnagram(s1, s2)) pairs++;
             }

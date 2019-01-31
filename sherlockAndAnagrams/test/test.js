@@ -7,4 +7,22 @@ describe('sherlockAndAnagrams', () => {
         const pairs = sherlockAndAnagrams(s);
         expect(pairs).to.equal(4);
     });
+
+    it('should return 0 for 0 pairs of anagrams', () => {
+        const s = 'abcd';
+        const pairs = sherlockAndAnagrams(s);
+        expect(pairs).to.equal(0);
+    });
+
+    it('should return 3 for 3 pairs of anagrams', () => {
+        const s = 'ifailuhkqq';
+        const pairs = sherlockAndAnagrams(s);
+        expect(pairs).to.equal(3);
+    });
+
+    it('should return 10 for 10 pairs of anagrams', () => {
+        const s = 'kkkk';
+        const pairs = sherlockAndAnagrams(s);
+        expect(pairs).to.equal(10);
+    });
 });
