@@ -15,4 +15,11 @@ describe('checkMagazine', () => {
         const answer = checkMagazine(magazine, note);
         expect(answer).to.equal('No');
     });
+
+    it('should return no #2', () => {
+        const magazine = ["ive", "got", "a", "lovely", "bunch", "of", "coconuts"];
+        const note = ["ive", "got", "some", "coconuts"];
+        const answer = checkMagazine(magazine, note);
+        expect(answer).to.equal('No');
+    });
 });

@@ -7,6 +7,7 @@
     "test": "test"
   },
   "scripts": {
+    "debug": "../node_modules/mocha/bin/mocha --inspect-brk",
     "test": "../node_modules/mocha/bin/mocha --reporter min --watch"
   },
   "author": "R5D4",
