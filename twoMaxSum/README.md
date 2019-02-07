@@ -1,0 +1,1 @@
+Given an array of positive integers, calculate the sum of the two largest integers.

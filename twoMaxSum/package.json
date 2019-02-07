@@ -1,0 +1,14 @@
+{
+  "name": "twomaxsum",
+  "version": "1.0.0",
+  "description": "Given an array of positive integers, calculate the sum of the two largest integers.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "../node_modules/mocha/bin/mocha --reporter min --watch"
+  },
+  "author": "R5D4",
+  "license": "ISC"
+}
