@@ -2,8 +2,22 @@ const expect = require('chai').expect;
 const { countTriplets } = require('../src/countTriplets');
 
 describe('countTriplets', () => {
-    it('should return 2 for 2 geometric triplets', () => {
+    it('should return 2 for 2 geometric triplets #1', () => {
+        const arr = [1, 2, 4, 8];
+        const r = 2;
+        const triplets = countTriplets(arr, r);
+        expect(triplets).to.equal(2);
+    });
+
+    it('should return 2 for 2 geometric triplets #2', () => {
         const arr = [1, 2, 2, 4];
+        const r = 2;
+        const triplets = countTriplets(arr, r);
+        expect(triplets).to.equal(2);
+    });
+
+    it('should return 2 for 2 geometric triplets #3', () => {
+        const arr = [1, 1, 2, 4];
         const r = 2;
         const triplets = countTriplets(arr, r);
         expect(triplets).to.equal(2);
