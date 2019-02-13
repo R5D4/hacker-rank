@@ -18,33 +18,35 @@ function activityNotifications (expenditure, d) {
         return output;
     }
 
-    function getMedian (arr) {
-        const sorted = sort(arr);
+    /**
+     * Returns median of sorted array
+     * @param {array} sorted 
+     */
+    function getMedian (sorted) {
         if (sorted.length % 2 === 0) { 
             return (sorted[sorted.length / 2 - 1] + sorted[sorted.length / 2]) / 2; 
         } else {
             return sorted[Math.floor(sorted.length / 2)];
         }
-        arr.splice(index, 0, current);
     }
 
     /**
-     * Remove last, add current, keeping arr sorted
+     * Remove last, add current, keeping input array sorted
      * @param {array} sorted sorted expenditure array of last d days
      * @param {int} last oldest expenditure
      * @param {int} current newest expenditure
      */
-    function updateArray (arr, last, current) {
-        arr.splice(arr.indexOf(last), 1);
+    function updateArray (sorted, last, current) {
+        sorted.splice(sorted.indexOf(last), 1);
         // find index of first element in arr larger than current
-        let index = arr.length;
-        for (let i = 0; i < arr.length; i++) {
-            if (arr[i] > current) {
+        let index = sorted.length;
+        for (let i = 0; i < sorted.length; i++) {
+            if (sorted[i] > current) {
                 index = i; 
                 break;
             }
         }
-        arr.splice(index, 0, current);
+        sorted.splice(index, 0, current);
     }
 
     // expenditure for first d trailing days, sorted
