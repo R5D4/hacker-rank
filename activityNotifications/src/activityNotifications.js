@@ -1,4 +1,5 @@
 function activityNotifications (expenditure, d) {
+
     /**
      * Counting sort
      * @param {array} arr 
@@ -24,12 +25,36 @@ function activityNotifications (expenditure, d) {
         } else {
             return sorted[Math.floor(sorted.length / 2)];
         }
+        arr.splice(index, 0, current);
     }
+
+    /**
+     * Remove last, add current, keeping arr sorted
+     * @param {array} sorted sorted expenditure array of last d days
+     * @param {int} last oldest expenditure
+     * @param {int} current newest expenditure
+     */
+    function updateArray (arr, last, current) {
+        arr.splice(arr.indexOf(last), 1);
+        // find index of first element in arr larger than current
+        let index = arr.length;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > current) {
+                index = i; 
+                break;
+            }
+        }
+        arr.splice(index, 0, current);
+    }
+
+    // expenditure for first d trailing days, sorted
+    const arr = sort(expenditure.slice(0, d));
 
     let count = 0;
     for (let i = d; i < expenditure.length; i++) {
-        const median = getMedian(expenditure.slice(i - d, i));
+        const median = getMedian(arr);
         if (expenditure[i] >= 2 * median) count++;
+        updateArray(arr, expenditure[i - d], expenditure[i]);
     }
     return count;
 }
