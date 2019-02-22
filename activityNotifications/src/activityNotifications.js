@@ -19,6 +19,25 @@ function activityNotifications (expenditure, d) {
     }
 
     /**
+     * Return first index of 'e' in 'arr'. -1 if not found.
+     * Binary search. Assume arr is sorted.
+     * @param {array} arr 
+     * @param {int} x
+     */
+    function indexOf (arr, x) {
+        function indexOfRecursive (arr, x, l, r) {
+            const m = Math.floor((l + r)/2);
+            if (r >= l) {
+                if (x === arr[m]) return m;
+                else if (x > arr[m]) return indexOfRecursive(arr, x, m + 1, r);
+                else return indexOfRecursive(arr, x, l, m - 1);
+            }
+            return -1;
+        }
+        return indexOfRecursive(arr, x, 0, arr.length - 1);
+    }
+
+    /**
      * Returns median of sorted array
      * @param {array} sorted 
      */
@@ -34,19 +53,19 @@ function activityNotifications (expenditure, d) {
      * Remove last, add current, keeping input array sorted
      * @param {array} sorted sorted expenditure array of last d days
      * @param {int} last oldest expenditure
-     * @param {int} current newest expenditure
+     * @param {int} e newest expenditure
      */
-    function updateArray (sorted, last, current) {
-        sorted.splice(sorted.indexOf(last), 1);
-        // find index of first element in arr larger than current
+    function updateArray (sorted, last, e) {
+        sorted.splice(indexOf(sorted, last), 1);
+        // find index of first element in arr larger than e
         let index = sorted.length;
         for (let i = 0; i < sorted.length; i++) {
-            if (sorted[i] > current) {
+            if (sorted[i] > e) {
                 index = i; 
                 break;
             }
         }
-        sorted.splice(index, 0, current);
+        sorted.splice(index, 0, e);
     }
 
     // expenditure for first d trailing days, sorted
