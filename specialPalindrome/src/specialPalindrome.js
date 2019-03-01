@@ -24,7 +24,7 @@ function substrCount(n, s) {
     if (substrArr.length >= 3) {
         for (let i = 0; i < substrArr.length - 2; i++) {
             const [s1, s2, s3] = [substrArr[i], substrArr[i + 1], substrArr[i + 2]];
-            if (s1[0] === s3[0] && s1[0] !== s2[0]) count += s1[1];
+            if (s1[0] === s3[0] && s1[0] !== s2[0] && s2[1] === 1) count += Math.min(s1[1], s3[1]);
         }
     }
 

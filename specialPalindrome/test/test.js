@@ -2,6 +2,18 @@ const expect = require('chai').expect;
 const { substrCount } = require('../src/specialPalindrome');
 
 describe('substrCount', () => {
+    it('should return 6 for string with 6 special substrings', () => {
+        const s = 'aaba';
+        const ans = substrCount(s.length, s);
+        expect(ans).to.equal(6);
+    });
+
+    it('should return 9 for string with 9 special substrings', () => {
+        const s = 'aabbaa';
+        const ans = substrCount(s.length, s);
+        expect(ans).to.equal(9);
+    });
+
     it('should return 7 for string with 7 special substrings', () => {
         const s = 'asasd';
         const ans = substrCount(s.length, s);
