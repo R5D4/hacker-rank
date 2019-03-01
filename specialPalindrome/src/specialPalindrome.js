@@ -4,7 +4,7 @@ function substrCount(n, s) {
     // y continuous x characters in the string.
     const substrArr = [];
     let last = undefined;
-    for (c of s) {
+    for (let c of s) {
         if (c !== last) substrArr.push([c, 1]);
         else substrArr[substrArr.length - 1][1]++;
         last = c;
