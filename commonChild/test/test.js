@@ -44,7 +44,7 @@ describe('commonChild', () => {
         });
     });
 
-    it.skip('should return 1417 for LCS of length 1417', (done) => {
+    it('should return 1417 for LCS of length 1417', (done) => {
         const rl = readline.createInterface({
             input: fs.createReadStream('test/input05.txt')
         });
