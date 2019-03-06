@@ -1,19 +1,19 @@
 function commonChild (s1, s2) {
     const memo = {};
-    function LCS (ss1, ss2) {
-        let len;
-        if (memo[`${ss1.length},${ss2.length}`] !== undefined) return memo[`${ss1.length},${ss2.length}`];
-        if (ss1.length === 0 || ss2.length === 0) {
-            len = 0;
-        } else if (ss1[ss1.length - 1] === ss2[ss2.length -1]) {
-            len = LCS(ss1.substring(0, ss1.length - 1), ss2.substring(0, ss2.length - 1)) + 1;
-        } else {
-            len = Math.max(LCS(ss1, ss2.substring(0, ss2.length - 1)), LCS(ss1.substring(0, ss1.length - 1), ss2));
+    for (let i = 0; i <= s1.length; i++) {
+        for (let j = 0; j <= s2.length; j++) {
+            let len;
+            if (i === 0 || j === 0) {
+                len = 0;
+            } else if (s1[i - 1] === s2[j - 1]) {
+                len = memo[`${i - 1},${j - 1}`] + 1;
+            } else {
+                len = Math.max(memo[`${i},${j - 1}`], memo[`${i - 1},${j}`]);
+            }
+            memo[`${i},${j}`] = len;
         }
-        memo[`${ss1.length},${ss2.length}`] = len;
-        return len;
     }
-    return LCS(s1, s2);
+    return memo[`${s1.length},${s2.length}`];
 }
 
 exports.commonChild = commonChild;
