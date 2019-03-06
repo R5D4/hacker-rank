@@ -2,7 +2,7 @@ function commonChild (s1, s2) {
     const memo = {};
     function LCS (ss1, ss2) {
         let len;
-        if (memo[`${ss1.length},${ss2.length}`]) return memo[`${ss1.length},${ss2.length}`];
+        if (memo[`${ss1.length},${ss2.length}`] !== undefined) return memo[`${ss1.length},${ss2.length}`];
         if (ss1.length === 0 || ss2.length === 0) {
             len = 0;
         } else if (ss1[ss1.length - 1] === ss2[ss2.length -1]) {
