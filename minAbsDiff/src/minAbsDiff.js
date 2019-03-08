@@ -1,10 +1,10 @@
 function minimumAbsoluteDifference(arr) {
+    const sorted = arr.slice().sort((a, b) => a - b);
+
     let min = Infinity;
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = i + 1; j < arr.length; j++) {
-            const absDiff = Math.abs(arr[i] - arr[j]);
-            min = absDiff < min ? absDiff : min;
-        }
+    for (let i = 0; i < sorted.length - 1; i++) {
+        const absDiff = Math.abs(sorted[i] - sorted[i + 1]);
+        min = absDiff < min ? absDiff : min;
     }
     return min;
 }
