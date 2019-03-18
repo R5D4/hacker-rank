@@ -5,8 +5,10 @@ function reverseShuffleMerge(s) {
     Object.entries(freqS).map(([k, v]) => freqA[k] = v / 2);
 
     // construct optimal answer A
-    let answer = '';
-    for(let i = s.length - 1; i >= 0; i--) {
+    let answer = s.slice(-1);
+    freqA[answer]--;
+    freqS[answer]--;
+    for(let i = s.length - 2; i >= 0; i--) {
         const c = s[i];
         if (freqA[c] > 0) { // we still need more c
             const lastChar = answer.charAt(answer.length - 1);
@@ -14,10 +16,13 @@ function reverseShuffleMerge(s) {
                 // replace last character of answer with c
                 answer = answer.slice(0, answer.length - 1) + c;
                 freqA[lastChar]++;
+                freqA[c]--;
+            } else if (freqS[c] > freqA[c]) {
+
             } else {
                 answer += c;
+                freqA[c]--;
             }
-            freqA[c]--;
         }
         freqS[c]--;
     }
