@@ -1,0 +1,15 @@
+{
+  "name": "pairs",
+  "version": "1.0.0",
+  "description": "https://www.hackerrank.com/challenges/pairs/problem",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "debug": "../node_modules/mocha/bin/mocha --inspect-brk",
+    "test": "../node_modules/mocha/bin/mocha --reporter min --watch"
+  },
+  "author": "R5D4",
+  "license": "ISC"
+}
